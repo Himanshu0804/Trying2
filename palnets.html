@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                background-color: rgb(0, 0, 0);
+                overflow: hidden;
+            }
+            .container{
+                font-size: 20px;
+                width: 30em;
+                height: 30em;
+                position: relative;
+            }
+            .sun {
+                position: absolute;
+                top: 15em;
+                left: 15em;
+                width: 10em;
+                height: 10em;
+                background-color: rgb(235, 231, 14);
+                border-radius: 50em;
+                box-shadow: 0 0 3em orange ;
+            }
+            .earth,.moon,.astroid {
+                position: absolute;
+                border-style: solid;
+                border-color: orangered white green;
+                border-width: .2em .2em .1em 0em;
+                border-radius: 50%;
+            }
+            .earth{
+                top: 5em;
+                left: 5em;
+                width: 30em;
+                height: 30em;
+                animation: orbit 20s
+                linear infinite;
+            }
+            .moon{
+                top: 0;
+                right: 0;
+                width: 8em;
+                height: 8em;
+                animation: orbit 20s
+                linear infinite;
+            }
+            .astroid{
+               
+                top: 2em;
+                right: 21.9em;
+                width: 15em;
+                height: 15em;
+                animation: orbit 20s
+                linear infinite;
+               
+            }
+                
+            .earth::before ,
+            .moon ::before ,
+            .astroid::before{
+                content: '';
+                position: absolute;
+                border-radius: 50em;
+                
+            }
+            .earth::before{
+                top: 2.8em;
+                right: 2.8em;
+                width: 3em;
+                height: 3em;
+                border-color: aqua;
+            }
+            .moon::before{
+                top: 0.8em;
+                right: 0.2em;
+                width: 1.2em;
+                height: 1.2em;
+                border-color: silver;
+               
+            }
+            .astroid::before{
+                top: 0.8em;
+                right: 0.9em;
+                width: 5em;
+                height: 5em;
+                border-radius: 80%;
+                border-color: blueviolet;
+
+            }
+            @keyframes orbit {
+                to {
+                   transform:rotate(360deg) ; 
+
+                }
+                
+            }
+
+
+        </style>
+    </head>
+    <div class="container">
+<div class="sun"></div>
+<div class="earth">
+<div class="moon"></div>
+<div class="astroid"></div>
+</div>
+    </div>
+    <body>
+        
+    </body>
+</html>
